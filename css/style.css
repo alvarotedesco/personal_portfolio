@@ -2,124 +2,132 @@ html,
 body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     user-select: none;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
 }
 
 .rootContainer {
     padding: 5px;
 }
 
-.rootContainer .headerContainer {
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    padding: 30px;
-}
-
-.rootContainer .headerContainer nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    border: solid;
-    border-width: 1px;
-    border-color: black;
-}
-
-.rootContainer .headerContainer nav .navItem {
-    padding: 10px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
 .rootContainer .mainContainer {
     padding-block: 30px;
 }
 
+.rootContainer .headerContainer nav {
+    border: solid;
+    display: flex;
+    border-width: 1px;
+    background: #FFFFFF;
+    border-color: black;
+}
+
+.rootContainer .headerContainer nav .navList {
+    gap: 30px;
+    display: flex;
+    list-style: none;
+}
+
+.rootContainer .headerContainer nav ul {
+    margin-block: 0;
+    padding: 10px;
+}
+
+.rootContainer .headerContainer nav .navList li {
+    letter-spacing: 3px;
+}
+
+.rootContainer .headerContainer nav .navList li a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.rootContainer .headerContainer nav .mobileMenuContainer {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.rootContainer .headerContainer nav .mobileMenuContainer .menu {
+    cursor: pointer;
+}
+
+.rootContainer .headerContainer nav .mobileMenuContainer .menu div {
+    width: 32px;
+    height: 2px;
+    background: #000000;
+    margin: 8px;
+    transition: 0.27s;
+}
+
 .rootContainer .mainContainer .heroBannerContainer {
     width: 100%;
-    display: flex;
-}
-
-.rootContainer .mainContainer .heroBannerContainer .heroBannerImageContainer {
-    width: 50%;
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    place-items: center;
 }
 
 .rootContainer .mainContainer .heroBannerContainer .heroBannerDetailsContainer {
-    width: 100%;
-    padding: 30px;
-}
-
-.rootContainer .mainContainer .heroBannerContainer .heroBannerImageContainer .heroBannerImage {
-    max-width: 250px;
-    max-height: 300px;
-    border: solid;
-    border-width: 1px;
-    border-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.rootContainer .mainContainer .heroBannerContainer .heroBannerDetailsContainer {
-    display: flex;
-    align-items: flex-end;
-}
-
-.rootContainer .mainContainer .companyExperiencesContainer {
     width: 100%;
     padding-top: 30px;
 }
 
+.rootContainer .mainContainer .heroBannerContainer .heroBannerDetailsContainer .heroBannerDetails {
+    padding-inline: 30px;
+}
+
+.rootContainer .mainContainer .heroBannerContainer .heroBannerImageContainer .heroBannerImage {
+    border: solid;
+    display: flex;
+    max-width: 250px;
+    max-height: 300px;
+    border-width: 1px;
+    align-items: center;
+    border-color: black;
+    justify-content: center;
+}
+
 .rootContainer .mainContainer .companyExperiencesContainer .companyExperiencesTitle {
     padding: 30px;
+    text-align: center;
 }
 
 .rootContainer .mainContainer .companyExperiencesContainer .carouselCompanyExperienceContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding-inline: 30px;
-}
-
-.rootContainer .mainContainer .companyExperiencesContainer .carouselCompanyExperienceContainer .carouselCompanyExperienceItemLeftArrow {
-    cursor: pointer;
 }
 
 .rootContainer .mainContainer .companyExperiencesContainer .carouselCompanyExperienceContainer .carouselCompanyExperienceItemsContainer {
-    padding-inline: 30px;
-    display: flex;
-    align-items: center;
-    /* overflow-x: scroll; */
-    width: 100%;
     gap: 30px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     padding-bottom: 10px;
+    justify-content: center;
 }
 
 .rootContainer .mainContainer .companyExperiencesContainer .carouselCompanyExperienceContainer .carouselCompanyExperienceItem {
+    border: solid;
+    padding: 30px;
+    display: flex;
     min-width: 200px;
     max-width: 200px;
     min-height: 270px;
     max-height: 270px;
-    padding: 30px;
-    border: solid;
     border-width: 1px;
     border-color: black;
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .rootContainer .mainContainer .companyExperiencesContainer .carouselCompanyExperienceContainer .carouselCompanyExperienceItem .carouselCompanyExperienceItemImage {
     border: solid;
-    border-width: 1px;
-    border-color: black;
     max-width: 200px;
     max-height: 110px;
+    border-width: 1px;
+    border-color: black;
 }
 
 .rootContainer .mainContainer .companyExperiencesContainer .carouselCompanyExperienceContainer .carouselCompanyExperienceItem .carouselCompanyExperienceItemDetails .carouselCompanyExperienceItemDetailsTitle {
@@ -136,30 +144,110 @@ body {
 }
 
 .rootContainer .mainContainer .companyExperiencesContainer .carouselCompanyExperienceContainer .carouselCompanyExperienceItem .carouselCompanyExperienceItemDetails .carouselCompanyExperienceItemDetailsButton {
-    cursor: pointer;
     width: 100%;
-    padding-block: 10px;
-}
-
-.rootContainer .mainContainer .companyExperiencesContainer .carouselCompanyExperienceContainer .carouselCompanyExperienceItemRightArrow {
     cursor: pointer;
+    padding-block: 10px;
 }
 
 .rootContainer .footerContainer {
     width: 100%;
-    /* padding-top: 30px; */
 }
 
 .rootContainer .footerContainer p {
-    text-align: center;
     margin: 0;
+    text-align: center;
     padding-block: 5px;
 }
 
-.rootContainer .headerContainer nav .navItem:hover {
-    background-color: gainsboro;
+.rootContainer .headerContainer nav .mobileMenuContainer.active .menu .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
 }
 
-.rootContainer .mainContainer button:hover {
-    background-color: gainsboro;
+.rootContainer .headerContainer nav .mobileMenuContainer.active .menu .line2 {
+    opacity: 0;
+}
+
+.rootContainer .headerContainer nav .mobileMenuContainer.active .menu .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+
+.rootContainer .headerContainer nav .navList.active {
+    transform: translateX(0);
+}
+
+.rootContainer .headerContainer nav .navList li a:hover {
+    color: #11bd83;
+}
+
+@media only screen and (max-width: 768px) {
+    .rootContainer .headerContainer nav .navList {
+        top: 4.96vh;
+        right: 5px;
+        width: 35vw;
+        height: 95.04vh;
+        position: absolute;
+        align-items: flex-end;
+        flex-direction: column;
+        transform: translateX(120%);
+        backdrop-filter: blur(10px);
+        transition: transform 0.27s ease-in;
+        background-color: rgba(255, 255, 255, 0.2);
+        box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .rootContainer .headerContainer {
+        display: flex;
+        padding: 30px;
+        align-items: center;
+        justify-content: end;
+    }
+
+    .rootContainer .headerContainer nav .mobileMenuContainer {
+        display: none;
+    }
+
+    .rootContainer .mainContainer .heroBannerContainer {
+        width: 100%;
+        display: flex;
+    }
+
+    .rootContainer .mainContainer .heroBannerContainer .heroBannerImageContainer {
+        width: 50%;
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .rootContainer .mainContainer .heroBannerContainer .heroBannerDetailsContainer {
+        padding: 30px;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .rootContainer .mainContainer .heroBannerContainer .heroBannerDetailsContainer .heroBannerDetails {
+        padding-inline: unset;
+    }
+
+    .rootContainer .mainContainer .companyExperiencesContainer {
+        width: 100%;
+        place-items: center;
+    }
+
+    .rootContainer .mainContainer .companyExperiencesContainer .carouselCompanyExperienceContainer {
+        display: flex;
+        align-items: center;
+        padding-inline: 30px;
+        justify-content: space-between;
+    }
+
+    .rootContainer .mainContainer .companyExperiencesContainer .carouselCompanyExperienceContainer .carouselCompanyExperienceItemsContainer {
+        justify-content: initial;
+    }
+
+    .rootContainer .mainContainer button:hover {
+        background-color: gainsboro;
+    }
 }
