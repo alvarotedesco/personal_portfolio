@@ -1,0 +1,208 @@
+.mobileMenu__linesContainer.active .mobileMenu__lines:first-child {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobileMenu__linesContainer.active .mobileMenu__lines:nth-child(2) {
+    opacity: 0;
+}
+
+.mobileMenu__linesContainer.active .mobileMenu__lines:last-child {
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+
+.nav__linksContainer.active {
+    transform: translateX(0);
+}
+
+.nav__linksContainer {
+    gap: 30px;
+    list-style: none;
+    flex-direction: column;
+}
+
+.nav__linksContainer li {
+    letter-spacing: 3px;
+}
+
+.nav__link {
+    color: #000000;
+    text-decoration: none;
+}
+
+.navContainer {
+    border: solid;
+    border-width: 1px;
+    background: #FFFFFF;
+    border-color: black;
+}
+
+.navContainer ul {
+    padding: 10px;
+    margin-block: 0;
+}
+
+.mobileMenuContainer {
+    width: 100%;
+    justify-content: end;
+}
+
+.mobileMenu__lines {
+    width: 32px;
+    height: 2px;
+    margin: 8px;
+    transition: 0.27s;
+    background: #000000;
+}
+
+.heroContainer {
+    place-items: center;
+}
+
+.hero__contentContainer {
+    padding-top: 30px;
+    padding-inline: 30px;
+}
+
+.hero__image {
+    border: solid;
+    max-width: 250px;
+    max-height: 300px;
+    border-width: 1px;
+    border-color: black;
+}
+
+.experiences__cardsContainer {
+    gap: 30px;
+    align-items: center;
+    padding-inline: 30px;
+    padding-bottom: 10px;
+    justify-content: center;
+}
+
+.experiences__card {
+    border: solid;
+    padding: 15px;
+    max-width: 100%;
+    border-width: 1px;
+    border-color: black;
+}
+
+.experiences__card-image {
+    border: solid;
+    max-width: 200px;
+    max-height: 120px;
+    border-width: 1px;
+    border-color: black;
+}
+
+.experiences__card-content-title {
+    margin: 0;
+    padding-block: 10px;
+}
+
+.footerContainer p {
+    margin: 0;
+    padding-block: 5px;
+}
+
+.hero__imageContainer {
+    margin: 0;
+}
+
+.nav__link:hover {
+    color: #11bd83;
+}
+
+@media only screen and (max-width: 285px) {
+
+    .hero__contentContainer,
+    .experiences__cardsContainer {
+        padding: unset;
+    }
+
+    .hero__image,
+    .experiences__card-image {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (min-width: 286px) {
+    .experiences__card {
+        min-width: 200px;
+        max-width: 200px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .nav__linksContainer {
+        width: 100%;
+        right: 0 !important;
+        padding-inline: 0 !important;
+        align-items: center !important;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .nav__linksContainer {
+        width: 45vw;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .nav__linksContainer {
+        top: 5.4vh;
+        right: 10px;
+        height: 94.6vh;
+        position: absolute;
+        align-items: flex-end;
+        transform: translateX(120%);
+        backdrop-filter: blur(10px);
+        transition: transform 0.27s ease-in;
+        background-color: rgba(255, 255, 255, 0.2);
+        box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .nav__linksContainer {
+        flex-direction: row;
+    }
+
+    .headerContainer {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+
+    .mobileMenuContainer {
+        display: none !important;
+    }
+
+    .heroContainer {
+        display: flex;
+        align-items: center;
+    }
+
+    .hero__imageContainer {
+        margin: 0;
+        width: 50%;
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero__contentContainer {
+        padding: 30px;
+    }
+
+    .experiencesContainer {
+        place-items: center;
+    }
+
+    .experiences__cardsContainer {
+        align-items: center;
+        padding-inline: 30px;
+        justify-content: space-between;
+    }
+}

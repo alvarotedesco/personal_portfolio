@@ -1,7 +1,7 @@
 const companyExperiences = [
   {
     companyName: "CoverPay",
-    image: "https://placehold.co/200x111",
+    image: "https://placehold.co/200x120",
     startDate: "03/2022",
     endDate: "04/2024",
     isCurrentJob: false,
@@ -9,7 +9,7 @@ const companyExperiences = [
   },
   {
     companyName: "TOTVS Oeste",
-    image: "https://placehold.co/200x111",
+    image: "https://placehold.co/200x120",
     startDate: "05/2024",
     endDate: "",
     isCurrentJob: true,
@@ -19,21 +19,24 @@ const companyExperiences = [
 
 function loadSettings() {
   setCurrentYear();
-  setHeroBannerImage();
   setCompanyExperiences();
 
-  const mobileMenuContainer = document.querySelector(".mobileMenuContainer");
+  const mobileMenuLinesContainer = document.getElementsByClassName(
+    "mobileMenu__linesContainer",
+  );
 
-  setClickEvent(mobileMenuContainer, function () {
-    mobileMenuContainer.classList.toggle("active");
+  setClickEvent(mobileMenuLinesContainer[0], function (event) {
+    mobileMenuLinesContainer[0].classList.toggle("active");
 
-    const navList = document.querySelector(".navList");
+    const navLinksContainer = document.getElementsByClassName(
+      "nav__linksContainer",
+    );
 
-    if (!navList) {
+    if (!navLinksContainer.length) {
       return;
     }
 
-    navList.classList.toggle("active");
+    navLinksContainer[0].classList.toggle("active");
   });
 }
 
@@ -55,59 +58,58 @@ function setCurrentYear() {
   });
 }
 
-function setHeroBannerImage() {
-  const heroBannerImage = document.getElementById("heroBannerImage");
-
-  if (!heroBannerImage) {
-    console.warn(
-      'f. setHeroBannerImage - Error when attempting to retrieve the element "heroBannerImage"!',
-    );
-
-    return;
-  }
-
-  heroBannerImage.innerHTML = `<img src="https://placehold.co/250x300" alt="perfilImageTest" style="max-width: 100%;" loading="lazy">`;
-}
-
 function setCompanyExperiences() {
-  const carouselCompanyExperienceItemsContainer = document.getElementById(
-    "carouselCompanyExperienceItemsContainer",
+  const experiencesCardsContainer = document.getElementsByClassName(
+    "experiences__cardsContainer",
   );
 
-  if (!carouselCompanyExperienceItemsContainer) {
+  if (!experiencesCardsContainer.length) {
     console.warn(
-      'f. setCompanyExperiences - Error when attempting to retrieve the element "carouselCompanyExperienceItemsContainer"!',
+      'f. setCompanyExperiences - Error when attempting to retrieve the element "experiences__cardsContainer"!',
     );
 
     return;
   }
 
-  const carouselCompanyExperienceItems = [];
-
   for (const companyExperience of companyExperiences) {
-    carouselCompanyExperienceItems.push(`<div class="carouselCompanyExperienceItem">
-      <div class="carouselCompanyExperienceItemImage">
-        <img src="${companyExperience.image}" alt="perfilImageTest" style="max-width: 100%;" loading="lazy">
-      </div>
-
-      <div class="carouselCompanyExperienceItemDetails">
-        <h4 class="carouselCompanyExperienceItemDetailsTitle">${companyExperience.companyName}</h4>
-
-        <span class="carouselCompanyExperienceItemDetailsStart">Iniciado em ${companyExperience.startDate}</span>
-
-        <br>
-
-        <span class="carouselCompanyExperienceItemDetailsEnd">${companyExperience.isCurrentJob ? "Cargo Atual" : `Finalizado em ${companyExperience.endDate}`}</span>
-
-        <br>
-
-        <button class="carouselCompanyExperienceItemDetailsButton" type="button">Mais detalhes</button>
-      </div>
-    </div>`);
+    experiencesCardsContainer[0].appendChild(
+      createExperienceCard(companyExperience),
+    );
   }
+}
 
-  carouselCompanyExperienceItemsContainer.innerHTML =
-    carouselCompanyExperienceItems.join("");
+function createExperienceCard(experienceData) {
+  const article = document.createElement("article");
+  article.className = "experiences__card cursor-pointer";
+
+  const containerCompanyImage = document.createElement("div");
+  containerCompanyImage.className = "experiences__card-imageContainer";
+
+  const companyImage = document.createElement("img");
+  companyImage.src = experienceData.image;
+  companyImage.alt = "logoEmpresa";
+  companyImage.className = "experiences__card-image";
+  companyImage.loading = "lazy";
+
+  containerCompanyImage.appendChild(companyImage);
+
+  const containerCardContent = document.createElement("div");
+  containerCardContent.className = "experiences__card-content text-center";
+
+  const title = document.createElement("h4");
+  title.textContent = experienceData.companyName;
+
+  containerCardContent.appendChild(title);
+
+  const spanClickToSeeMoreDetails = document.createElement("span");
+  spanClickToSeeMoreDetails.textContent = "Clique para ver mais detalhes";
+
+  containerCardContent.appendChild(spanClickToSeeMoreDetails);
+
+  article.appendChild(containerCompanyImage);
+  article.appendChild(containerCardContent);
+
+  return article;
 }
 
 function setClickEvent(element, callback) {

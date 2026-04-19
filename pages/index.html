@@ -4,54 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Alvaro Tedesco - Portfólio Profissional</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/base.css">
 </head>
 
 <body onload="loadSettings();">
     <div class="rootContainer">
         <header class="headerContainer">
-            <nav>
-                <div class="mobileMenuContainer">
-                    <div class="menu">
-                        <div class="line1"></div>
-                        <div class="line2"></div>
-                        <div class="line3"></div>
+            <nav class="navContainer flex">
+                <div class="mobileMenuContainer flex">
+                    <div class="mobileMenu__linesContainer cursor-pointer">
+                        <div class="mobileMenu__lines"></div>
+                        <div class="mobileMenu__lines"></div>
+                        <div class="mobileMenu__lines"></div>
                     </div>
                 </div>
 
-                <ul class="navList">
+                <ul class="nav__linksContainer flex">
                     <li>
-                        <a href="./index.html">Início</a>
+                        <a href="./index.html" class="nav__link">Início</a>
                     </li>
 
                     <li>
-                        <a href="./index.html">Projetos</a>
+                        <a href="./index.html" class="nav__link">Projetos</a>
                     </li>
 
                     <li>
-                        <a href="./index.html">Contato</a>
+                        <a href="./index.html" class="nav__link">Contato</a>
                     </li>
                 </ul>
             </nav>
         </header>
 
         <main class="mainContainer">
-            <section class="heroBannerContainer">
-                <div class="heroBannerImageContainer">
-                    <div id="heroBannerImage" class="heroBannerImage"></div>
-                </div>
+            <section class="heroContainer" aria-labelledby="hero-title">
+                <figure class="hero__imageContainer">
+                    <img src="https://placehold.co/250x300" alt="perfilImageTest" class="hero__image" loading="lazy">
+                </figure>
 
-                <div class="heroBannerDetailsContainer">
-                    <div class="heroBannerDetails">
-                        <h2>Alvaro Tedesco</h2>
+                <div class="hero__contentContainer">
+                    <article>
+                        <h1 id="hero-title">Alvaro Tedesco</h1>
 
-                        <p>
-                            Sou desenvolvedor web, criando soluções que vão desde o back-end até o
-                            front-end, tenho conhecimento nas seguintes linguagens de programação e seus
-                            frameworks:
+                        <p> Sou desenvolvedor web, criando soluções que vão desde o back-end até o front-end, tenho
+                            conhecimento nas seguintes linguagens de programação e seus frameworks:
                         </p>
 
                         <ul>
@@ -59,38 +58,25 @@
                             <li>Dart - Flutter</li>
                             <li>Java - Fluig</li>
                             <li>PHP - Laravel</li>
-                            <li>
-                                Python | C - Prática <strong>somente</strong> em projetos pessoais.
-                            </li>
+                            <li> Python | C - Prática <strong>somente</strong> em projetos pessoais. </li>
                         </ul>
 
-                        <p>
-                            * Biblioteca que mais utilizo no momento para JavaScript é jQuery.
-                            <br>
-                            ** Para linguagem de banco de dados, utilizo MySQL.
+                        <p> * Biblioteca que mais utilizo no momento para JavaScript é jQuery. <br> ** Para linguagem de
+                            banco de dados, utilizo MySQL.
                         </p>
-                    </div>
+                    </article>
                 </div>
             </section>
 
-            <section class="companyExperiencesContainer">
-                <h3 class="companyExperiencesTitle">Empresas onde trabalhei</h3>
+            <section class="experiencesContainer" aria-labelledby="experience-title">
+                <h2 id="experience-title" class="text-center">Empresas onde trabalhei</h2>
 
-                <div class="carouselCompanyExperienceContainer">
-                    <div id="carouselCompanyExperienceItemsContainer" class="carouselCompanyExperienceItemsContainer">
-
-                    </div>
-                </div>
+                <div class="experiences__cardsContainer flex flex-wrap"></div>
             </section>
         </main>
 
         <footer class="footerContainer">
-            <p>
-                &copy; <span id="currentYearContainer"></span> Alvaro Tedesco.
-                <br>
-                Todos os direitos reservados.
-            </p>
-
+            <p class="text-center"> &copy; <span id="currentYearContainer"></span> Alvaro Tedesco. <br> Todos os direitos reservados.</p>
         </footer>
     </div>
 
