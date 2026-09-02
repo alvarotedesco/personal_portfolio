@@ -33,3 +33,15 @@ body {
 .margin-bottom-0 {
     margin-bottom: 0;
 }
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.stop-scrolling {
+    overflow: hidden;
+}
