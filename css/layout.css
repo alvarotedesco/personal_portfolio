@@ -1,15 +1,15 @@
-.rootContainer {
+.root {
     padding: 10px;
     margin: 0 auto;
     max-width: 1400px;
 }
 
-.mainContainer {
+main {
     padding-block: 25px;
 }
 
-.headerContainer,
-.mainContainer,
-.footerContainer {
+header,
+main,
+footer {
     width: 100%;
 }

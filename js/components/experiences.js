@@ -16,30 +16,28 @@ const companyExperiences = [
 ];
 
 export function renderExperiences() {
-  const experiencesList = document.querySelector(
-    ".experiences__cardsContainer",
-  );
+  const experienceList = document.querySelector(".experience-list");
 
-  if (!experiencesList) {
+  if (!experienceList) {
     return;
   }
 
   for (const experience of companyExperiences) {
-    experiencesList.appendChild(createExperienceCard(experience));
+    experienceList.appendChild(createExperienceCard(experience));
   }
 }
 
 function createExperienceCard(experience) {
   const article = document.createElement("article");
-  article.classList.add("experiences__card", "cursor-pointer");
+  article.classList.add("experience-card", "cursor-pointer");
 
   const imageWrapper = createCompanyImage(experience);
 
   const experiencesCardContainer = document.createElement("div");
-  experiencesCardContainer.classList.add("experiences__card-content");
+  experiencesCardContainer.classList.add("experience-card-content");
 
   const title = document.createElement("h3");
-  title.classList.add("experiences__card-content", "text-center");
+  title.classList.add("experience-card-content", "text-center");
   title.textContent = experience.companyName;
 
   const period = document.createElement("p");
@@ -51,9 +49,11 @@ function createExperienceCard(experience) {
     "align-items-center",
     "justify-content-center",
   );
+
   const detailsButton = document.createElement("button");
   detailsButton.type = "button";
   detailsButton.textContent = "Mais detalhes";
+
   buttonContainer.appendChild(detailsButton);
 
   experiencesCardContainer.append(title, period, buttonContainer);
@@ -63,20 +63,14 @@ function createExperienceCard(experience) {
 }
 
 function createCompanyImage(experience) {
-  const experienceCardImageContainer = document.createElement("div");
-  experienceCardImageContainer.classList.add(
-    "experiences__card-imageContainer",
-  );
-
   const image = document.createElement("img");
-  image.classList.add("experiences__card-image");
+
+  image.classList.add("experience-card-image");
   image.src = experience.image;
   image.alt = `Logo da empresa ${experience.companyName}`;
   image.loading = "lazy";
 
-  experienceCardImageContainer.appendChild(image);
-
-  return experienceCardImageContainer;
+  return image;
 }
 
 function createExperiencePeriod(experience) {

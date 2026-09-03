@@ -8,7 +8,7 @@ function initialize() {
 }
 
 function setCurrentYear() {
-  const currentYear = document.getElementById("currentYear");
+  const currentYear = document.getElementById("current-year");
 
   if (!currentYear) {
     return;

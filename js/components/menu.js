@@ -1,6 +1,6 @@
 export function initializeMenu() {
-  const menuButton = document.querySelector(".mobileMenu__linesContainer");
-  const navLinks = document.querySelector(".nav__linksContainer");
+  const menuButton = document.querySelector(".menu-button");
+  const navLinks = document.querySelector(".nav-links");
 
   if (!menuButton || !navLinks) {
     return;

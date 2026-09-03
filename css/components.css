@@ -1,52 +1,56 @@
-.mobileMenu__linesContainer.active .mobileMenu__lines:first-child {
+.menu-button.active .menu-line:first-child {
     transform: rotate(-45deg) translate(-8px, 8px);
 }
 
-.mobileMenu__linesContainer.active .mobileMenu__lines:nth-child(2) {
+.menu-button.active .menu-line:nth-child(2) {
     opacity: 0;
 }
 
-.mobileMenu__linesContainer.active .mobileMenu__lines:last-child {
+.menu-button.active .menu-line:last-child {
     transform: rotate(45deg) translate(-5px, -7px);
 }
 
-.nav__linksContainer.active {
+.nav-links.active {
     transform: translateX(0);
 }
 
-.nav__linksContainer {
+.nav-links {
     gap: 30px;
     list-style: none;
     flex-direction: column;
 }
 
-.nav__linksContainer li {
+.nav-links li {
     letter-spacing: 3px;
 }
 
-.nav__link {
+.nav-link {
     color: #000000;
     text-decoration: none;
 }
 
-.navContainer {
+.nav-link:hover {
+    color: #11bd83;
+}
+
+nav {
     border: solid;
     border-width: 1px;
     background: #FFFFFF;
     border-color: black;
 }
 
-.navContainer ul {
+nav ul {
     padding: 10px;
     margin-block: 0;
 }
 
-.mobileMenuContainer {
+.menu {
     width: 100%;
     justify-content: end;
 }
 
-.mobileMenu__lines {
+.menu-line {
     width: 32px;
     height: 2px;
     margin: 8px;
@@ -54,16 +58,15 @@
     background: #000000;
 }
 
-.heroContainer {
+.hero {
     place-items: center;
 }
 
-.hero__contentContainer {
-    padding-top: 25px;
-    padding-inline: 25px;
+.hero-image {
+    margin: 0;
 }
 
-.hero__image {
+.hero-image img {
     border: solid;
     max-width: 250px;
     max-height: 300px;
@@ -71,7 +74,12 @@
     border-color: black;
 }
 
-.experiences__cardsContainer {
+.hero-content {
+    padding-top: 25px;
+    padding-inline: 25px;
+}
+
+.experience-list {
     gap: 30px;
     align-items: center;
     padding-inline: 25px;
@@ -79,7 +87,7 @@
     justify-content: center;
 }
 
-.experiences__card {
+.experience-card {
     border: solid;
     padding: 15px;
     max-width: 100%;
@@ -87,7 +95,7 @@
     border-color: black;
 }
 
-.experiences__card-image {
+.experience-card-image {
     border: solid;
     max-width: 200px;
     max-height: 120px;
@@ -95,46 +103,33 @@
     border-color: black;
 }
 
-.experiences__card-content-title {
-    margin: 0;
-    padding-block: 10px;
-}
-
-.footerContainer p {
+footer p {
     margin: 0;
     padding-block: 5px;
 }
 
-.hero__imageContainer {
-    margin: 0;
-}
-
-.nav__link:hover {
-    color: #11bd83;
-}
-
 @media only screen and (max-width: 285px) {
 
-    .hero__contentContainer,
-    .experiences__cardsContainer {
+    .hero-content,
+    .experience-list {
         padding: unset;
     }
 
-    .hero__image,
-    .experiences__card-image {
+    .hero-image img,
+    .experience-card-image {
         max-width: 100%;
     }
 }
 
 @media only screen and (min-width: 286px) {
-    .experiences__card {
+    .experience-card {
         min-width: 200px;
         max-width: 200px;
     }
 }
 
 @media only screen and (max-width: 480px) {
-    .nav__linksContainer {
+    .nav-links {
         width: 100%;
         right: 0 !important;
         padding-inline: 0 !important;
@@ -143,13 +138,13 @@
 }
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-    .nav__linksContainer {
+    .nav-links {
         width: 45vw;
     }
 }
 
 @media only screen and (max-width: 768px) {
-    .nav__linksContainer {
+    .nav-links {
         top: 5.4vh;
         right: 10px;
         height: 94.6vh;
@@ -164,26 +159,26 @@
 }
 
 @media only screen and (min-width: 769px) {
-    .nav__linksContainer {
+    .nav-links {
         flex-direction: row;
     }
 
-    .headerContainer {
+    header {
         display: flex;
         align-items: center;
         justify-content: end;
     }
 
-    .mobileMenuContainer {
+    .menu {
         display: none !important;
     }
 
-    .heroContainer {
+    .hero {
         display: flex;
         align-items: center;
     }
 
-    .hero__imageContainer {
+    .hero-image {
         margin: 0;
         width: 50%;
         padding: 25px;
@@ -192,15 +187,15 @@
         justify-content: center;
     }
 
-    .hero__contentContainer {
+    .hero-content {
         padding: 25px;
     }
 
-    .experiencesContainer {
+    .experiences {
         place-items: center;
     }
 
-    .experiences__cardsContainer {
+    .experience-list {
         align-items: center;
         padding-inline: 25px;
         justify-content: space-between;
